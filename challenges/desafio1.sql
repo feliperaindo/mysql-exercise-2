@@ -74,6 +74,16 @@ CREATE TABLE follow (
         REFERENCES artists (id)
 );
 
+CREATE TABLE favorite_songs (
+    user_id INT NOT NULL,
+    song_id INT NOT NULL,
+    CONSTRAINT PRIMARY KEY (user_id, song_id),
+    FOREIGN KEY (user_id)
+        REFERENCES users_data (id),
+    FOREIGN KEY (song_id)
+        REFERENCES musics (id)
+);
+
 -- INSERT VALUES IN EACH TABLE
 INSERT INTO artists (artist_name)
 	VALUES
@@ -163,3 +173,19 @@ INSERT INTO follow (following_user_id, followed_artist_id)
         (7, 6),
         (9, 3),
         (10, 2);
+
+INSERT INTO favorite_songs (user_id, song_id)
+    VALUES
+        (1, 3),
+        (1, 6),
+        (1, 10),
+        (2, 4),
+        (3, 1),
+        (3, 3),
+        (4, 7),
+        (4, 4),
+        (5, 10),
+        (5, 2),
+        (6, 4),
+        (7, 7),
+        (8, 3);
