@@ -6,4 +6,4 @@ INNER JOIN musics ON fs.song_id = musics.id
 INNER JOIN albums ON albums.id = musics.album_id
 GROUP BY albums.album_name
 ORDER BY favoritadas DESC
-LIMIT 3; 
+LIMIT 3;
