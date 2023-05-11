@@ -15,7 +15,7 @@ CREATE TABLE artists (
 CREATE TABLE plans (
     id INT AUTO_INCREMENT,
     type_name VARCHAR(15) NOT NULL,
-    cost DECIMAL(10,2) NOT NULL,
+    cost DECIMAL(10, 2) NOT NULL,
     CONSTRAINT PRIMARY KEY (id)
 )  ENGINE=INNODB;
 
@@ -51,7 +51,7 @@ CREATE TABLE users_data (
     CONSTRAINT PRIMARY KEY (id),
     FOREIGN KEY (subscription_plan_id)
 		  REFERENCES plans(id)
-) ENGINE=INNODB;
+)  ENGINE=INNODB;
   
 CREATE TABLE playback_history (
     reproduction_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
